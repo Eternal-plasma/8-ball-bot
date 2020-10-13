@@ -7,15 +7,16 @@ bot.on('ready', () =>{
     console.log('This bot is on')
 });
 
-
-
-bot.on('message', msg=>{
-
-    function randomQuote() {
-        return quotes[Math.floor(Math.random() * quotes.length)];
-    };
-    if(msg.content === "Shake")
-    {
-        msg.reply(randomQuote());
-    }
+                                                                                                                           
+bot.on('message', msg=>{                                                                                                   
+                                                                                                                           
+    function randomQuote() {                                                                                               
+        return quotes[Math.floor(Math.random() * quotes.length)];                                                          
+    };                                                                                                                     
+    const prefix = "?";                                                                                                    
+                                                                                                                           
+    if (msg.content.endsWith(prefix))                                                                                      
+    {                                                                                                                      
+        msg.reply(randomQuote());                                                                                          
+    }                                                                                                                      
 });
